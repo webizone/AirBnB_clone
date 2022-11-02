@@ -87,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
                     break
             try:
                 print(str_rep)
-            except:
+            except ValueError:
                 print("** no instance found **")
 
     def do_destroy(self, args):
@@ -108,7 +108,7 @@ class HBNBCommand(cmd.Cmd):
             try:
                 out.pop(key)
                 storage.save()
-            except:
+            except ValueError:
                 print("** no instance found **")
 
     def do_all(self, args):
@@ -214,4 +214,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
